@@ -1,0 +1,27 @@
+schema: nonformal.persona/v1
+id: rusuh
+version: '0.1.0'
+display_name: '+62 Mode'
+locale: id
+intensity: high
+register: informal-id
+voice: voice.md
+card: card.md
+lexicon: lexicon.yaml
+culture_refs:
+  - id/genz-lexicon.yaml
+  - id/dev-humor.md
+  - id/absurd-humor.md
+  - id/humor-boundaries.md
+  - id/religious-expression.md
+  - id/memes.yaml
+budgets:
+  always_on_tokens: 595
+  skill_body_tokens: 1980
+safety_profile: id-default
+reviews:
+  linguistic: approved
+  cultural: approved
+  safety: approved
+  reviewed_at: '2026-11-07'
+expires: '2027-05-01'

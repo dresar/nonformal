@@ -1,0 +1,51 @@
+{
+  "name": "nonformal",
+  "version": "1.0.0",
+  "license": "MIT",
+  "description": "Ultra-lightweight Indonesian & regional non-formal personality layer for AI coding agents (Antigravity, Claude Code, Cursor, OpenCode, Copilot)",
+  "type": "module",
+  "bin": {
+    "nonformal": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "profiles",
+    "personas",
+    "culture",
+    "core",
+    "schemas",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "coding-agent",
+    "claude-code",
+    "antigravity",
+    "opencode",
+    "indonesia",
+    "rusuh-id",
+    "ai-agent",
+    "nonformal"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "bundle": "esbuild src/cli.ts --bundle --platform=node --format=esm --banner:js=\"import { createRequire } from 'node:module'; const require = createRequire(import.meta.url);\" --outfile=dist/cli.js",
+    "prepublishOnly": "npm run bundle",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test",
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\" \"profiles/**/*.yaml\" \"personas/**/*.yaml\" \"culture/**/*.yaml\" \".github/**/*.yml\" package.json tsconfig.json",
+    "build": "node src/cli.ts build --profile rusuh-id --adapter antigravity",
+    "measure": "node src/cli.ts measure --profile rusuh-id"
+  },
+  "dependencies": {
+    "yaml": "^2.9.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.2",
+    "esbuild": "^0.28.2",
+    "prettier": "^3.9.10",
+    "typescript": "^7.0.2"
+  }
+}

@@ -1,0 +1,11 @@
+node_modules/
+# dist/ — uncommit for publishing
+# dist/
+# Compiler output and live eval working reports. The curated evidence for every
+# run is committed under docs/evidence/, so raw reports stay out of history.
+.nonformal/
+coverage/
+*.tsbuildinfo
+npm-debug.log*
+.env
+.env.*
